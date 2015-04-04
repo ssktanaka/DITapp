@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JSON, PHP and JQuery - Lecturer Data</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script>
+
+    	$(document).on('click', '#lecturerButton',function(){
+        	$.getJSON('../php/json-data-lecturers.php', function(data) {
+				$.each(data.lecturers, function(index, lecturer) {
+  					$('#lecturerData').append('<p> First Name: ' + lecturer.firstName+ '</p>');
+  					$('#lecturerData').append('<p> Last Name: ' + lecturer.lastName+ '</p>');
+  					$('#lecturerData').append('<p> Staff No: ' + lecturer.staffNumber+ '</p>');
+				});
+        	});
+    	});
+
+	</script>
+</head>
+
+<body>
+
+<div id="lecturerData">
+<button id="lecturerButton">Get Lecturer Info</button>
+</div>
+</body>
+</html>

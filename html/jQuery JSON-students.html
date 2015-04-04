@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>JSON, PHP and JQuery - Student Data</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		
+	<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script>
+
+    	$(document).on('click', '#studentButton',function(){
+        	$.getJSON('../php/json-data-students.php', function(data) {
+				$.each(data.students, function(index, student) {
+  					$('#studentData').append('<p> First Name: ' + student.firstName+ '</p>');
+  					$('#studentData').append('<p> Last Name: ' + student.lastName+ '</p>');
+  					$('#studentData').append('<p> Student ID: ' + student.studentID+ '</p>');
+				});
+        	});
+    	});
+
+	</script>
+</head>
+<body>
+<div id="studentData">
+<button id="studentButton">Get Student Info</button>
+</div>
+</body>
+</html>

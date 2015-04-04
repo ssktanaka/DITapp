@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+<!-- 	set width to pixel width of device screen -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Choose class</title>
+	<link rel="stylesheet" href="../themes/font-awesome/css/font-awesome.min.css"/>	
+	<link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../themes/ditApp.min.css" />
+	<link rel="stylesheet" href="../themes/navmenu.css" />	
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<!-- open page1-->
+	<div data-role="page" data-theme="a" id="homepage" data-title="Homepage">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Homepage">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="http://localhost:8888/themes/images/icons-png/bars-black.png"></a></span>  
+			DIT Home
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<p>Your theme was successfully downloaded. You can use this page as a reference for how to link it up!</p>
+			<div id="lecturerData">
+				<button id="lecturerButton">Get Lecturer Info</button>
+			</div>
+			<p>This is content color swatch "A" and a preview of a <a href="#" class="ui-link">link</a>.</p>
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </div>	
+		<!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close page1 -->
+
+	<!-- open page2-->
+	<div data-role="page" data-theme="a" id="modulePage" data-title="Find Module"><!-- open header -->
+		<div data-role="header" data-position="inline" title="Module Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="http://localhost:8888/themes/images/icons-png/bars-black.png"></a></span>  
+			Find Module
+			</h1>
+		</div> <!-- close header -->		
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview" data-inset="true" id="moduleButtons">
+			</ul>
+		</div><!-- close content -->
+
+		<!-- open navigation panel -->
+		<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </div>	
+		<!-- close navigation panel -->
+
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close page2 -->
+
+	<!-- additional class page displayed here -->
+	<div data-role="page" data-theme="a" id="moduleInfo" data-title="Module Information">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Module Information" data-add-back-btn="true">	
+			<h1>Course Information</h1>		
+		</div><!-- close header -->	
+		<!-- open content -->	
+		<div role="main" class="ui-content">
+	<!-- populate with relevant course information -->
+			<div id="additionalContent"></div>
+		</div> <!-- close content -->
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close additional class page -->
+
+	<!-- open page3-->
+	<div data-role="page" data-theme="a" id="schedulePage" data-title="View Schedule">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Schedule Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="http://localhost:8888/themes/images/icons-png/bars-black.png"></a></span>  
+			View Schedule
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<!-- open content styling -->
+			<div class="ui-corner-all custom-corners">
+				<!-- begin filter section -->
+			    <div class="ui-bar ui-bar-a">
+			    	<h3>Filter Options</h3>
+			    </div><!-- close filter section -->
+				<!-- open day of week filter  -->
+			    <div class="ui-body ui-body-a">
+					<label for="select-choice-1" class="select">Select a day of the week</label>
+						<select name="select-choice-1" id="select-choice-1">
+						    <option value="Monday">Monday</option>
+						    <option value="Tuesday">Tuesday</option>
+						    <option value="Wednesday">Wednesday</option>
+						    <option value="Thursday">Thursday</option>
+						    <option value="Friday">Friday</option>
+						</select>
+				</div><!-- close day of week filter-->
+				<!-- open student filter  -->
+			    <div class="ui-body ui-body-a">
+					<label for="select-choice-1" class="select">Students, select your name</label>
+						<select name="select-choice-2" id="select-choice-2">
+						</select>
+				</div><!-- close student filter-->
+				<!-- begin days of the week-->
+			    <div class="ui-body ui-body-a">
+					<p id="scheduleContent"></p>
+			    </div><!-- close days of the week-->
+			</div><!-- close content styling -->
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </div>	
+		<!-- close navigation panel -->
+
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close page3 -->
+
+
+	<!-- open page4-->
+	<div data-role="page" data-theme="a" id="messagePage" data-title="Send Message">
+<!-- open header -->
+		<div data-role="header" data-position="inline" title="Message Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="http://localhost:8888/themes/images/icons-png/bars-black.png"></a></span>  
+			Send Message
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+		
+			<!-- open content styling -->
+			<div class="ui-corner-all custom-corners">
+				<!-- begin message section -->
+			    <div class="ui-bar ui-bar-a">
+			    	<h3>Send Message</h3>
+			    </div><!-- close message section -->
+				<!-- open lecturer filter  -->
+			    <div class="ui-body ui-body-a">
+					<label for="select-choice-1" class="select">Select a lecturer</label>
+						<select name="select-choice-1" id="select-choice-3" autofocus>
+						</select>
+				</div><!-- close lecturer filter-->
+				<!-- begin message content-->
+			    <div class="ui-body ui-body-a" id="messageContent">
+					<form id="messageForm">
+						<!-- message area -->
+						<label for="textarea">Type your message:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea">
+						</textarea>
+						<!-- full name -->
+						<label for="basic">Enter your full name:</label>
+						<input type="text" name="name" id="basic" placeholder="e.g. Cookie Monster" required></input>
+						<!-- response date -->
+						<label for="date">Request response by:</label>
+						<input type="date" name="newinput" required></input>
+						<!-- submit button -->
+						<input type="submit" value="Submit">
+					</form>
+			    </div><!-- close message content-->
+			</div><!-- close content styling -->
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </div>	
+		<!-- close navigation panel -->
+
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close page4 -->
+
+	<!-- open page5-->
+	<div data-role="page" data-theme="a" id="aboutPage" data-title="About This App">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="About Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="http://localhost:8888/themes/images/icons-png/bars-black.png"></a></span>  
+			About this App
+			</h1>
+		</div> <!-- close header -->		
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<p>This is for about info. </p>
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<div class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </div>	
+		<!-- close navigation panel -->
+
+		<!-- open footer -->		
+		<div data-role="footer" data-position="inline">
+			<h1>This is the footer</h1>
+		</div> <!-- close footer -->	
+	</div><!-- close page5 -->
+<script src="findModule.js"></script>
+<script src="viewSchedule.js"></script>
+<script src="sendMessage.js"></script>
+
+</body>
+</html>
