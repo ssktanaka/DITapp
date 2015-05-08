@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app>
+<head>
+	<meta charset="utf-8">
+<!-- 	set width to pixel width of device screen -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>Choose class</title>
+	<link rel="stylesheet" href="../themes/font-awesome/css/font-awesome.min.css"/>	
+	<link rel="stylesheet" href="../themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="../themes/ditApp.min.css" />
+	<link rel="stylesheet" href="../themes/mystyle.css" />	
+<!-- 	additional Javascript files included at end of body content -->
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="../maps_plugin/jquery.ui.map.full.min.js" type="text/javascript"></script>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwnas0V3Lq9D7LnGtWDsjnvfTy1D3Oy3o">
+   </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+</head>
+<body ng-app="DIT">
+	<!-- open page1, homepage-->
+	<div data-role="page" data-theme="a" id="homepage" data-title="Homepage">
+		<!-- open header -->
+		<div data-role="header" title="Homepage">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+				<!-- navigation menu icon -->
+				<span class="open left"><a href="#panel"><img src="../themes/images/bars-black.png"></a></span>  
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a" class="homepage-only">
+			<!-- add spacing for legibility -->
+			<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11,12,13,14,15,16,17,18,19,20]"/>
+			<a href="#modulePage" data-role="button" >Find Module</a>
+			<a href="#schedulePage" data-role="button">View Schedule</a>	
+			<a href="#messagePage" data-role="button">Send Message</a>	
+			<br/><br/>				
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<nav class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </nav><!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b">Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->			
+	</div><!-- close page1 -->
+
+	<!-- open page2-->
+	<div data-role="page" data-theme="a" id="modulePage" data-title="Find Module">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Module Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+				<span class="open left"><a href="#panel"><img src="../themes/images/bars-black.png"></a></span>  
+			Find Module
+			</h1>
+		</div> <!-- close header -->		
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview" data-inset="true" id="moduleButtons">
+			</ul>
+			<!-- add spacing for legibility -->
+			<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6]"/>
+			
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<nav class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </nav><!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b">Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->			
+	</div><!-- close page2 -->
+
+	<!-- additional class page displayed here -->
+	<div data-role="page" data-theme="a" id="moduleInfo" data-title="Module Information" class="ui-body-a">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Module Information" data-add-back-btn="true">	
+			<h1>Course Information</h1>		
+		</div><!-- close header -->	
+		<!-- open content -->	
+		<div data-role="main" class="ui-content">
+			<div class="ui-body ui-body-b">
+				<!-- populate with relevant course information -->
+				<div id="additionalContent"></div>
+			</div>
+		</div> <!-- close content -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b" >Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->			
+	</div><!-- close additional class page -->
+
+	<!-- open page3-->
+	<div data-role="page" data-theme="a" id="schedulePage" data-title="View Schedule">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Schedule Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+			<span class="open left"><a href="#panel"><img src="../themes/images/bars-black.png"></a></span>  
+			View Schedule
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<!-- open content styling -->
+			<div class="ui-corner-all custom-corners">
+				<!-- open student filter  -->
+			    <div class="ui-body ui-body-b">
+					<label for="select-choice-1" class="select">Students, select your name</label>
+						<select name="select-choice-2" id="select-choice-2">
+						</select>
+				</div><!-- close student filter-->
+				<!-- add spacing for legibility, to be hidden later -->
+				<div class="spacefiller">
+					<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]"/>
+				</div>		
+				<!-- begin course information-->
+			    <div class="ui-body ui-body-b">
+					<div class="ui-grid-a">
+						<div class="ui-block-a" id="module1"></div>
+						<div class="ui-block-b" id="module2"></div>
+					</div><!-- /grid-a -->
+			    </div><!-- close course information-->
+				<!-- add spacing for legibility-->
+				<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11,12]"/>
+			</div><!-- close content styling -->
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<nav class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </nav><!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b">Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->		
+	</div><!-- close page3 -->
+
+	<!-- open page4-->
+	<div data-role="page" data-theme="a" id="messagePage" data-title="Send Message">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="Message Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+				<span class="open left"><a href="#panel"><img src="../themes/images/bars-black.png"></a></span>  
+			Send Message
+			</h1>
+		</div> <!-- close header -->
+		<!-- open content -->
+		<div data-role="content" data-theme="a">
+			<!-- open content styling -->
+			<div class="ui-corner-all custom-corners">
+				<!-- begin message section -->
+			    <div class="ui-bar ui-bar-a">
+			    	<h3>Send Message</h3>
+			    </div><!-- close message section -->
+				<!-- open lecturer filter  -->
+			    <div class="ui-body ui-body-b">
+					<label for="select-choice-1" class="select">Select a lecturer</label>
+						<select name="select-choice-1" id="select-choice-3" autofocus>
+						</select>
+				</div><!-- close lecturer filter-->
+				<!-- add spacing for legibility, to be hidden later -->
+				<div class="spacefiller">
+					<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11,12,13,14,15,16,17,18,19,20]"/></div>
+				<!-- begin message content-->
+			    <div class="ui-body ui-body-b" id="messageContent">
+					<form id="messageForm">
+						<!-- message area -->
+						<label for="textarea">Type your message:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea">
+						</textarea>
+						<!-- full name -->
+						<label for="basic">Enter your full name:</label>
+						<input type="text" name="name" id="basic" placeholder="e.g. Cookie Monster" required></input>
+						<!-- response date -->
+						<label for="date">Request response by:</label>
+						<input type="date" name="newinput" required></input>
+						<!-- submit button -->
+						<input type="submit" value="Submit">
+					</form>
+			    </div><!-- close message content-->
+			</div><!-- close content styling -->
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<nav class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </nav><!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b">Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->		
+	</div><!-- close page4 -->
+
+	<!-- open page5-->
+	<div data-role="page" data-theme="a" id="aboutPage" data-title="About This App">
+		<!-- open header -->
+		<div data-role="header" data-position="inline" title="About Page">
+			<!-- wrap menu in header to ensure alignment -->
+			<h1>
+			<!-- navigation menu -->
+				<span class="open left"><a href="#panel"><img src="../themes/images/bars-black.png"></a></span>  
+			About This App
+			</h1>
+		</div> <!-- close header -->		
+		<!-- open content -->
+		<div data-role="content" data-theme="a">		
+			<!-- open content styling -->
+			<div class="ui-corner-all custom-corners">
+				<!-- begin header section -->
+			    <div class="ui-bar ui-bar-a">
+			    	<h3>Product Information</h3>
+			    </div><!-- close header section -->
+				<!-- open body section  -->
+			    <div class="ui-body ui-body-b">
+					<p><b>Created by Sanette Tanaka</b></p>
+					<p>Social Media Applications, Keith Gardiner</p> 
+					<p>Creative Digital Media, Dublin Institute of Technology</p>
+					<p>May 2015</p>
+				</div><!-- close body section-->
+				<!-- add spacing for legibility -->
+				<br ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7,8,9,10,11,12,13,14,15,16]"/>
+			</div><!-- close content styling -->
+		</div><!-- close content -->
+		<!-- open navigation panel -->
+		<nav class="panel left" data-role="panel" data-position="left" data-display="push" id="panel">
+	        <ul>
+	            <li class="homepage_settings"><a href="#homepage" title="Home">Home</a></li>
+	            <li class="module_settings"><a href="#modulePage" title="Module">Find Module</a></li>
+	            <li class="schedule_settings"><a href="#schedulePage" title="Schedule">View Schedule</a></li>
+	            <li class="message_settings"><a href="#messagePage" title="Message">Send Message</a></li>
+	            <li class="about_settings"><a href="#aboutPage" title="About">About This App</a></li>
+	        </ul>
+	    </nav><!-- close navigation panel -->
+		<!-- open footer -->		
+		<div data-theme="a" data-role="footer" data-position="fixed">
+	        <h3>
+	          	<div class="ui-block-b">Copyright © 2015 Sanette Tanaka</div>
+	        </h3>                
+	    </div><!-- close footer -->			
+	</div><!-- close page5 -->
+<!-- additional javascript sources -->
+<script src="findModule.js"></script>
+<script src="viewSchedule.js"></script>
+<script src="sendMessage.js"></script>
+</body>
+</html>
